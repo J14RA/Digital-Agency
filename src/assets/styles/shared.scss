@@ -1,0 +1,102 @@
+// src/assets/styles/shared.scss
+@use "sass:color";
+$primary-color: #46a889;
+$secondary-color: #193541;
+
+/* Mixins */
+@mixin hover-bg($color) {
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: color.adjust($color, $lightness: -10%);
+    }
+}
+
+@mixin hover-box-shadow($color) {
+    transition: box-shadow 0.3s, transform 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 2px 5px $color;
+        transform: scale(1.05);
+    }
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+}
+
+/* Header & Navigation */
+.main-header {
+    background-color: $secondary-color;
+    color: white;
+    width: 100%;
+    z-index: 100;
+    position: sticky;
+    top: 0;
+
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+
+        &__logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+
+            img {
+                width: 2rem;
+                margin-right: 0.8rem;
+            }
+        }
+
+        &__items {
+            display: flex;
+            list-style: none;
+        }
+
+        &__item {
+            margin-left: 1rem;
+
+            a {
+                font-size: 1.2rem;
+                text-decoration: none;
+                color: white;
+                padding: 0.6rem 1rem;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+
+            &--cta {
+                text-decoration: none;
+                @include hover-bg($primary-color);
+                background-color: $primary-color;
+                color: white;
+                padding: 0.6rem 1.2rem;
+                border-radius: 1rem;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
