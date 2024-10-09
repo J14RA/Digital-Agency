@@ -5,8 +5,8 @@ import TestimonialPage from "../components/TestimonialPage.vue";
 
 const routes = [
   { path: "/", component: HomePage },
-  { path: "/Portfolio", component: PortfolioPage },
-  { path: "/Testimonial", component: TestimonialPage },
+  { path: "/portfolio", component: PortfolioPage },
+  { path: "/testimonial", component: TestimonialPage },
 ];
 
 const router = createRouter({
