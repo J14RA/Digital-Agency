@@ -1,10 +1,117 @@
 // src/assets/styles/about.scss
+@import "@/assets/styles/shared.scss"; // Import shared styles
+
 .portfolio {
-    h1 {
-        color: #8e44ad;
+    padding: 2rem;
+    background-color: $secondary-color;
+
+    .portfolio-title {
+        h2 {
+            margin: 0 auto;
+            padding: 2rem 0;
+            font-size: 4rem;
+            color: white;
+        }
+
+        img {
+            padding: 0.5rem;
+            width: 9rem;
+        }
+
+        p {
+            max-width: 50%;
+            text-align: left;
+            color: white;
+            font-size: 1.2rem;
+        }
     }
 
-    p {
-        color: #9b59b6;
+    .portfolio-items {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        background-color: #193541;
+
+        .portfolio-item {
+            padding: 1rem;
+            background-color: $primary-color;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            }
+
+            img {
+                width: 100%;
+                border-bottom: 2px solid #193541;
+            }
+
+            .portfolio-info {
+                padding: 1.5rem;
+                background-color: $primary-color;
+                color: white;
+                text-align: center;
+
+                h3 {
+                    font-size: 1.2rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+/* Tablet and Desktop media queries */
+@include tablet {
+    .portfolio-items {
+        grid-template-columns: 1fr;
+        /* Single column for tablets */
+    }
+}
+
+@include desktop {
+    .portfolio-items {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for larger screens */
+        grid-template-rows: repeat(5, 1fr);
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+
+    .div1 {
+        grid-row: span 3 / span 3;
+
+        /* Spans 3 rows */
+        img {
+            height: 85%;
+        }
+    }
+
+    .div2 {
+        grid-row: span 2 / span 2;
+        /* Spans 2 rows */
+    }
+
+    .div3 {
+        grid-row: span 2 / span 2;
+        grid-column-start: 1;
+        /* Starts in first column */
+        grid-row-start: 4;
+        /* Starts in row 4 */
+    }
+
+    .div4 {
+        grid-row: span 3 / span 3;
+        grid-column-start: 2;
+        /* Starts in second column */
+        grid-row-start: 3;
+        /* Starts in row 3 */
     }
 }

@@ -1,10 +1,250 @@
 // src/assets/styles/home.scss
+@import "@/assets/styles/shared.scss"; // Import shared styles
+
 .home {
+    padding: 2rem;
+    background-color: $secondary-color;
+
     h1 {
-        color: #2ecc71;
+        margin: 0 auto;
+        padding: 2rem 0;
+        font-size: 4rem;
+        color: white;
+
+        img {
+            padding: 0.5rem;
+            transform: rotate(30deg);
+            width: 4rem;
+        }
     }
 
-    p {
-        color: #27ae60;
+    .image-stack {
+        padding: 2rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        /* Spacing between the images */
+        position: relative;
+        /* To handle absolute positioning inside */
+    }
+
+    .image {
+        width: 12rem;
+        /* Adjust size of images */
+        height: auto;
+        border-radius: 20px;
+        /* Rounded corners */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+        /* Add shadow for depth */
+        position: relative;
+    }
+
+    .image1 {
+        transform: rotate(-10deg);
+        /* Tilt the image */
+        z-index: 1;
+        /* Stack order */
+        margin-right: -40px;
+        /* Overlap adjustment */
+    }
+
+    .image2 {
+        transform: rotate(-5deg);
+        z-index: 2;
+        margin-right: -40px;
+    }
+
+    .image3 {
+        transform: rotate(0deg);
+        /* No rotation for the center image */
+        z-index: 3;
+    }
+
+    .image4 {
+        transform: rotate(5deg);
+        z-index: 2;
+        margin-left: -40px;
+    }
+
+    .image5 {
+        transform: rotate(10deg);
+        z-index: 1;
+        margin-left: -40px;
+    }
+
+    .home-bottom {
+        padding: 3rem 0;
+
+        h2 {
+            padding: 2rem 0;
+            font-size: 1.8rem;
+            color: white;
+
+            img {
+                padding: 0.5rem;
+                transform: rotate(30deg);
+                width: 10rem;
+            }
+        }
+    }
+
+
+    .banner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 10rem;
+    }
+
+    /* Common styles for both bands */
+    .text-band {
+        position: absolute;
+        width: fit-content;
+        font-size: 1rem;
+        white-space: nowrap;
+        color: white;
+        background-color: #4db6ac;
+        /* Greenish background color */
+        padding: 1rem 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    /* First band moving in one direction */
+    .first-band {
+        transform: rotate(-5deg);
+        /* Diagonal rotation */
+        top: 45%;
+        left: -66%;
+    }
+
+    /* Second band moving in opposite direction */
+    .second-band {
+        transform: rotate(5deg);
+        bottom: 12%;
+        left: -114%;
+    }
+}
+
+
+
+@include tablet {
+
+    /* Footer adjustments */
+    .footer {
+        .footer-container {
+            flex-direction: row; // Align the columns horizontally on tablet
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .footer-left {
+                display: flex;
+                flex-direction: column;
+                width: 50%; // Split width between left and right columns on tablet
+
+                .footer-left__title--links {
+                    list-style: none;
+                }
+            }
+
+            .footer-right {
+                flex-direction: column;
+                width: 50%; // Split width between left and right columns on tablet
+
+                a {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .footer-bottom {
+            flex-direction: row; // Align footer bottom elements horizontally
+            justify-content: space-between;
+
+            p,
+            .footer-bottom_list {
+                margin: 0;
+            }
+        }
+    }
+
+    /* Show the main header and hide the mobile header */
+    .main-header {
+        display: block;
+    }
+
+    .mobile-header {
+        display: none;
+    }
+}
+
+/* Desktop Styles */
+@include desktop {
+
+    .home {
+        h1 {
+            margin: unset;
+            font-size: 10rem;
+            max-width: 80%;
+
+            img {
+                width: 10rem;
+            }
+        }
+
+
+        .image {
+            width: 20rem;
+        }
+
+        .home-bottom {
+            h2 {
+                font-size: 4rem;
+
+                img {
+                    transform: rotate(30deg);
+                }
+            }
+        }
+
+
+        .banner {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 16rem;
+        }
+
+        /* Common styles for both bands */
+        .text-band {
+            position: absolute;
+            width: fit-content;
+            font-size: 3rem;
+            white-space: nowrap;
+            color: white;
+            background-color: #4db6ac;
+            /* Greenish background color */
+            padding: 1rem 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* First band moving in one direction */
+        .first-band {
+            transform: rotate(-5deg);
+            /* Diagonal rotation */
+            top: 33%;
+            left: -66%;
+        }
+
+        /* Second band moving in opposite direction */
+        .second-band {
+            transform: rotate(5deg);
+            bottom: 31%;
+            left: -65%;
+        }
     }
 }

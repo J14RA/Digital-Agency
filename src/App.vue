@@ -1,10 +1,11 @@
 <template>
-  <div id="app">
-    <AppHeader />
+  <AppHeader />
+  <main>
     <router-view />
-    <AppFooter />
-  </div>
+  </main>
+  <AppFooter />
 </template>
+
 
 <script>
 import AppHeader from './components/AppHeader.vue';
