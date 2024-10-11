@@ -2,6 +2,7 @@
 @import "@/assets/styles/shared.scss"; // Import shared styles
 
 .home {
+    min-height: 100vh;
     padding: 2rem;
     background-color: $secondary-color;
 
@@ -132,53 +133,71 @@
 
 @include tablet {
 
-    /* Footer adjustments */
-    .footer {
-        .footer-container {
-            flex-direction: row; // Align the columns horizontally on tablet
-            justify-content: space-between;
-            align-items: flex-start;
+    .home {
+        h1 {
+            margin: unset;
+            font-size: 10rem;
+            max-width: 80%;
 
-            .footer-left {
-                display: flex;
-                flex-direction: column;
-                width: 50%; // Split width between left and right columns on tablet
-
-                .footer-left__title--links {
-                    list-style: none;
-                }
+            img {
+                width: 10rem;
             }
+        }
 
-            .footer-right {
-                flex-direction: column;
-                width: 50%; // Split width between left and right columns on tablet
 
-                a {
-                    font-size: 2rem;
+        .image {
+            width: 30rem;
+        }
+
+        .home-bottom {
+            h2 {
+                font-size: 4rem;
+
+                img {
+                    transform: rotate(30deg);
                 }
             }
         }
 
-        .footer-bottom {
-            flex-direction: row; // Align footer bottom elements horizontally
-            justify-content: space-between;
 
-            p,
-            .footer-bottom_list {
-                margin: 0;
-            }
+        .banner {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 16rem;
         }
-    }
 
-    /* Show the main header and hide the mobile header */
-    .main-header {
-        display: block;
-    }
+        /* Common styles for both bands */
+        .text-band {
+            position: absolute;
+            width: fit-content;
+            font-size: 2.5rem;
+            white-space: nowrap;
+            color: white;
+            background-color: #4db6ac;
+            /* Greenish background color */
+            padding: 1rem 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+        }
 
-    .mobile-header {
-        display: none;
+        /* First band moving in one direction */
+        .first-band {
+            transform: rotate(-5deg);
+            top: 30%;
+            left: -70%;
+        }
+
+        /* Second band moving in opposite direction */
+        .second-band {
+            transform: rotate(5deg);
+            bottom: 30%;
+            left: -90%;
+        }
     }
 }
+
 
 /* Desktop Styles */
 @include desktop {
@@ -196,7 +215,7 @@
 
 
         .image {
-            width: 20rem;
+            width: 30rem;
         }
 
         .home-bottom {

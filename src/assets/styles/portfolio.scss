@@ -2,33 +2,37 @@
 @import "@/assets/styles/shared.scss"; // Import shared styles
 
 .portfolio {
+    min-height: 100vh;
     padding: 2rem;
     background-color: $secondary-color;
 
     .portfolio-title {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+
         h2 {
+            text-align: right;
             margin: 0 auto;
-            padding: 2rem 0;
             font-size: 4rem;
             color: white;
-        }
 
-        img {
-            padding: 0.5rem;
-            width: 9rem;
+            img {
+                padding: 0.5rem;
+                width: 9rem;
+            }
         }
 
         p {
-            max-width: 50%;
-            text-align: left;
+            padding: 2rem 0;
             color: white;
             font-size: 1.2rem;
         }
     }
 
     .portfolio-items {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 1.5rem;
         background-color: #193541;
 
@@ -46,6 +50,7 @@
 
             img {
                 width: 100%;
+                max-height: 10rem;
                 border-bottom: 2px solid #193541;
             }
 
@@ -70,48 +75,79 @@
 
 /* Tablet and Desktop media queries */
 @include tablet {
-    .portfolio-items {
-        grid-template-columns: 1fr;
-        /* Single column for tablets */
+    .portfolio {
+
+        .portfolio-title {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: end;
+            gap: 2rem;
+
+            /* Vertically centers both elements */
+            h2 {
+                font-size: 4rem;
+                flex: 1;
+            }
+
+            p {
+                padding: 2rem;
+                flex: 1;
+                /* Take up the remaining space on the right */
+                /* Aligns the text on the right */
+            }
+        }
+
+        .portfolio-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* Two columns for larger screens */
+            grid-template-rows: repeat(5, 1fr);
+            gap: 1.5rem;
+            padding: 2rem;
+
+            .portfolio-item img {
+                max-height: unset;
+            }
+        }
+
+        .div1 {
+            grid-row: span 3 / span 3;
+        }
+
+        .div2 {
+            grid-row: span 2 / span 2;
+            /* Spans 2 rows */
+        }
+
+        .div3 {
+            grid-row: span 2 / span 2;
+            grid-column-start: 1;
+            /* Starts in first column */
+            grid-row-start: 4;
+            /* Starts in row 4 */
+        }
+
+        .div4 {
+            grid-row: span 3 / span 3;
+            grid-column-start: 2;
+            /* Starts in second column */
+            grid-row-start: 3;
+            /* Starts in row 3 */
+        }
+
     }
 }
 
 @include desktop {
-    .portfolio-items {
-        grid-template-columns: repeat(2, 1fr);
-        /* Two columns for larger screens */
-        grid-template-rows: repeat(5, 1fr);
-        gap: 1.5rem;
-        padding: 2rem;
-    }
+    .portfolio {
+        .portfolio-title {
+            h2 {
+                font-size: 8rem;
+            }
 
-    .div1 {
-        grid-row: span 3 / span 3;
-
-        /* Spans 3 rows */
-        img {
-            height: 85%;
+            p {
+                padding: 2rem;
+            }
         }
-    }
-
-    .div2 {
-        grid-row: span 2 / span 2;
-        /* Spans 2 rows */
-    }
-
-    .div3 {
-        grid-row: span 2 / span 2;
-        grid-column-start: 1;
-        /* Starts in first column */
-        grid-row-start: 4;
-        /* Starts in row 4 */
-    }
-
-    .div4 {
-        grid-row: span 3 / span 3;
-        grid-column-start: 2;
-        /* Starts in second column */
-        grid-row-start: 3;
-        /* Starts in row 3 */
     }
 }
