@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import "swiper/swiper-bundle.css";
 import HomePage from "../components/HomePage.vue";
 import PortfolioPage from "../components/PortfolioPage.vue";
 import TestimonialPage from "../components/TestimonialPage.vue";

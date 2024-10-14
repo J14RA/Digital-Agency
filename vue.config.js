@@ -4,10 +4,23 @@ module.exports = {
   configureWebpack: {
     plugins: [
       new webpack.DefinePlugin({
-        __VUE_OPTIONS_API__: JSON.stringify(true), // Enable/disable Vue Options API
-        __VUE_PROD_DEVTOOLS__: JSON.stringify(false), // Disable devtools in production
-        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: JSON.stringify(false), // Disable hydration mismatch details in production
+        __VUE_OPTIONS_API__: JSON.stringify(true),
+        __VUE_PROD_DEVTOOLS__: JSON.stringify(false),
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: JSON.stringify(false),
       }),
     ],
+  },
+  chainWebpack: (config) => {
+    config.module
+      .rule("vue")
+      .use("vue-loader")
+      .tap((options) => {
+        options.compilerOptions = {
+          ...options.compilerOptions,
+          isCustomElement: (tag) =>
+            ["swiper-slide", "swiper-container"].includes(tag),
+        };
+        return options;
+      });
   },
 };

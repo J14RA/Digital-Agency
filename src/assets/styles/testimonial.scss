@@ -1,10 +1,46 @@
 // src/assets/styles/contact.scss
-.testimonial {
-    h1 {
-        color: #2980b9;
-    }
+@import "@/assets/styles/shared.scss"; // Import shared styles
 
-    p {
-        color: #3498db;
-    }
-}
+// #testimonial {
+//     min-height: 100vh;
+//     min-width: 100vw;
+//     padding: 2rem;
+//     background-color: $secondary-color;
+//     overflow: hidden;
+
+//     .testimonial {
+
+//         .swiper-1,
+//         .swiper-2 {
+//             width: 100%;
+//             height: 100%;
+//         }
+
+//         .swiper-container {
+//             width: 100%;
+//             height: 100%;
+//         }
+
+//         .testimonial-slide,
+//         .testimonial-image {
+//             max-width: 80rem;
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             text-align: center;
+//         }
+
+//         .testimonial-image img {
+//             border-radius: 20%;
+//             width: 25rem;
+//             height: 25rem;
+//             object-fit: cover;
+//             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//         }
+//     }
+// }
+
+
+// @include tablet {}
+
+// @include desktop {}
