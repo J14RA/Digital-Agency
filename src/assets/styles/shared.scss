@@ -39,10 +39,12 @@ $secondary-color: #193541;
     box-sizing: border-box;
 }
 
+html,
 body {
+    height: 100%;
     font-family: 'Arial', sans-serif;
     line-height: 1.5;
-    color: color.scale($secondary-color, $lightness: 70%); // Ensure contrast
+    color: color.scale($secondary-color, $lightness: 70%);
 }
 
 #app {
@@ -55,6 +57,7 @@ body {
 
 main {
     flex-grow: 1;
+    overflow: hidden;
 }
 
 /* Header & Navigation */
@@ -103,7 +106,7 @@ main {
                 transition: color 0.3s;
 
                 &:hover {
-                    color: color.scale($primary-color, $lightness: 30%); // Better contrast
+                    color: color.scale($primary-color, $lightness: 30%);
                 }
             }
 
@@ -120,7 +123,7 @@ main {
 }
 
 .mobile-header {
-    display: block; // Initially show the mobile header
+    display: block;
     background-color: $secondary-color;
     color: white;
     width: 100%;
@@ -322,6 +325,8 @@ main {
 /* Tablet Styles */
 @include tablet {
     .footer {
+        overflow: hidden;
+
         .footer-container {
             flex-direction: row;
             justify-content: space-between;
@@ -359,6 +364,7 @@ main {
     }
 
     .main-header {
+        overflow: hidden;
         display: block;
     }
 
@@ -370,6 +376,8 @@ main {
 /* Desktop Styles */
 @include desktop {
     .footer {
+        overflow: hidden;
+
         .footer-container {
             flex-direction: row;
             justify-content: space-between;
@@ -408,6 +416,7 @@ main {
     }
 
     .main-header {
+        overflow: hidden;
         display: block;
     }
 
