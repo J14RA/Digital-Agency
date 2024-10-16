@@ -9,9 +9,12 @@
       <img src="https://placehold.co/500x200" alt="Image 5" class="image image5">
     </div>
     <div class="home-bottom">
-      <h2>Oxentree is a So Design, Development Driven Studio That Creates Digital Experiences We Like To Help
+      <h2>Oxentree is a <img src="/assets/chicken-svgrepo-com.svg" alt=""> So Design, Development Driven Studio That
+        <img src="/assets/images/circle-svgrepo-green.svg" alt="">
+        Creates Digital Experiences We Like To Help <img src="/assets/images/circle-half-svgrepo-com.svg" alt="">
         Interesting
-        Brands Tell Their Stories.</h2>
+        Brands Tell Their Stories.
+      </h2>
       <div class="banner">
         <div class="text-band first-band">
           ✦ FUELLING THE WORLD'S NEXT BIG IDEAS ✦ FUELLING THE WORLD'S NEXT BIG IDEAS ✦ FUELLING THE WORLD'S NEXT BIG
